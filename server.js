@@ -545,4 +545,11 @@ function startCron() {
       }, i * 18000);
     });
   }, { timezone: s.timezone || 'UTC' });
-  console.log(`✅ Cron set for ${hour}:${min} (${s.timezone || 'UTC'})
+  console.log(`✅ Cron set for ${hour}:${min} (${s.timezone || 'UTC'})`);
+}
+
+app.listen(PORT, () => {
+  console.log(`✅ Server running on port ${PORT}`);
+  console.log(`🌐 Public URL: ${PUBLIC_URL || '(not set yet)'}`);
+  setupMessenger(); startCron();
+});
